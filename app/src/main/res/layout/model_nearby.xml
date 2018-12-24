@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hospital_details_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardUseCompatPadding="true"
+    android:background="@color/colorPrimaryDark">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp">
+
+        <ImageView
+            android:id="@+id/hospital_image"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/no_formal_description"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/hospital_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/hospital_name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignTop="@id/hospital_image"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/hospital_image"/>
+
+        <TextView
+            android:id="@+id/hospital_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/hospital_address"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/hospital_image"
+            android:layout_below="@id/hospital_name"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
