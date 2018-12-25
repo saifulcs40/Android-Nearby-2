@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,31 +32,12 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.ViewHolder
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.model_nearby,viewGroup,false);
         final ViewHolder viewHolder = new ViewHolder(view);
 
-        hospitalDialog = new Dialog(viewGroup.getContext());
-        hospitalDialog.setContentView(R.layout.dialog_hospital_details);
 
         viewHolder.hospitalDetailsCard.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                ImageView hospitalImage = hospitalDialog.findViewById(R.id.hospital_image_dialog);
-                TextView hospitalName = hospitalDialog.findViewById(R.id.hospital_name_dialog);
-                TextView hospitalAddress = hospitalDialog.findViewById(R.id.hospital_address_dialog);
-                TextView hospitalOpeningHour = hospitalDialog.findViewById(R.id.hospital_opening_hour);
-                /*Button callHospital = hospitalDialog.findViewById(R.id.call_hospital);
-                Button callAmbulance = hospitalDialog.findViewById(R.id.call_for_ambulance);
-                Button directionToHospital = hospitalDialog.findViewById(R.id.hospital_direction_on_map);*/
-
-
-                hospitalName.setText(resultList.get(viewHolder.getAdapterPosition()).getName());
-                hospitalAddress.setText(resultList.get(viewHolder.getAdapterPosition()).getVicinity());
-                //hospitalOpeningHour.setText(resultList.get(viewHolder.getAdapterPosition()).getOpeningHours());
-                //callHospital.setText(resultList.get(viewHolder.getAdapterPosition()));
-
-                Toast.makeText(viewGroup.getContext(), "Test Click"+String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
-
-                hospitalDialog.show();
             }
         });
 
@@ -67,6 +49,7 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.hospitalNameTV.setText(resultList.get(i).getName());
         viewHolder.hospitalAddressTV.setText(resultList.get(i).getVicinity());
+
     }
 
     @Override
